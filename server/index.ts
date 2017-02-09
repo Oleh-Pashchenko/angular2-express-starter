@@ -23,7 +23,6 @@ app.use((request: express.Request, response: express.Response, next: express.Nex
 app.use((error: any, request: express.Request, response: express.Response, next: express.NextFunction) => {
     response.status(error.status || 500);
     response.json({
-        error: {},
         message: error.message
     });
 });
