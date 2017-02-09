@@ -36,4 +36,4 @@ schema.static("addTask", (task: ITask) => {
 
 export type TaskModel = Model<ITask> & ITaskModel;
 
-export const Task: TaskModel = <TaskModel>DatabaseModule.MongoDB.mongoose.model<ITask>("Task", schema);
+export const Task: TaskModel = <TaskModel>DatabaseModule.MongoDB.mongooseModel<ITask>("Task", schema);

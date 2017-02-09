@@ -3,8 +3,8 @@ mongoose.Promise = global.Promise;
 
 export module DatabaseModule {
     export class MongoDB {
-        public static mongoose = mongoose;
-        
+        public static mongooseModel = mongoose.model;
+
         private static connectionString: string;
 
         public static Init(connectionString: string) {
