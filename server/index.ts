@@ -2,9 +2,10 @@ import * as express from 'express';
 import { json, urlencoded } from 'body-parser';
 import * as path from 'path';
 import * as compression from 'compression';
+import { DatabaseModule } from './mongo';
+import { mainRouter } from './routes/main';
 
-import  { mainRouter } from './routes/main';
-
+DatabaseModule.MongoDB.Init('');
 const app: express.Application = express();
 app.disable('x-powered-by');
 
