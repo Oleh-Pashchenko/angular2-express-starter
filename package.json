@@ -3,21 +3,46 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "angular-cli": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "mv ./node_modules/@types/mongodb/index.d.ts ./node_modules/@types/mongodb/temp.d.ts && ng serve --aot=true --proxy-config proxy.conf.json && npm run _server:run",
+    "lint": "tslint \"src/**/*.ts\"",
+    "build": "mv ./node_modules/@types/mongodb/index.d.ts ./node_modules/@types/mongodb/temp.d.ts && ng build --prod --sm=false --aot=true --output-path=dist/client && mv ./node_modules/@types/mongodb/temp.d.ts ./node_modules/@types/mongodb/index.d.ts",
+    "_server:run": "mv ./node_modules/@types/mongodb/temp.d.ts ./node_modules/@types/mongodb/index.d.ts && nodemon dist/server/bin/www.js",
+    "_server:build": "tsc -p ./server",
+    "postinstall": "npm run build",
+    "rename:temp": "mv ./node_modules/@types/mongodb/index.d.ts ./node_modules/@types/mongodb/temp.d.ts",
+    "rename:index": "mv ./node_modules/@types/mongodb/temp.d.ts ./node_modules/@types/mongodb/index.d.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@angular/common": "^2.4.7",
+    "@angular/core": "^2.4.7",
+    "@angular/forms": "^2.4.7",
+    "@angular/http": "^2.4.7",
+    "@angular/platform-browser": "^2.4.7",
+    "@angular/platform-browser-dynamic": "^2.4.7",
+    "@angular/router": "^3.4.7",
+    "angular-cli": "^1.0.0-beta.28.3",
     "body-parser": "^1.16.0",
     "compression": "^1.6.2",
+    "core-js": "^2.4.1",
     "express": "^4.14.1",
-    "mongoose": "^4.8.1"
+    "mongodb": "^2.2.22",
+    "mongoose": "^4.8.1",
+    "rxjs": "^5.1.0",
+    "tslint": "^4.4.2",
+    "zone.js": "^0.7.6"
   },
   "devDependencies": {
     "@types/body-parser": "0.0.33",
     "@types/compression": "0.0.33",
     "@types/express": "^4.0.35",
-    "@types/mongoose": "^4.7.5"
+    "@types/mongodb": "^2.1.39",
+    "@types/mongoose": "^4.7.5",
+    "codelyzer": "^2.0.0",
+    "concurrently": "^3.2.0",
+    "nodemon": "^1.11.0"
   }
 }

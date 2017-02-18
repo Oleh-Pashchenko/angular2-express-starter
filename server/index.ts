@@ -15,6 +15,10 @@ app.use(urlencoded({ extended: true }));
 
 app.use('/api', mainRouter);
 
+if (app.get('env') === 'production') {
+    app.use(express.static(path.join(__dirname, '/../client')));
+}
+
 app.use((request: express.Request, response: express.Response, next: express.NextFunction) => {
     let error = new Error('Not found');
     next(error);

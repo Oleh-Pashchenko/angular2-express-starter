@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "declaration": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "mapRoot": "./",
+        "baseUrl": "./",
+        "module": "es6",
+        "moduleResolution": "node",
+        "outDir": "../dist/out-tsc",
+        "sourceMap": true,
+        "target": "es5",
+        "files": ["main.ts"],
+        "typeRoots": [
+            "../node_modules/@types"
+        ]
+    }
+}
