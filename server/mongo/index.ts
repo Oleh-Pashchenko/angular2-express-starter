@@ -1,4 +1,4 @@
-import mongoose = require("mongoose");
+import mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 export module DatabaseModule {
@@ -14,4 +14,4 @@ export module DatabaseModule {
             }
         }
     }
-}
+};

@@ -22,4 +22,4 @@ import { routing } from './app.router';
     AppComponent
   ]
 })
-export class AppModule {}
+export class AppModule {};

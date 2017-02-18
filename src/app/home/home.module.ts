@@ -18,4 +18,4 @@ import { routing } from './home.router';
     HomeComponent
   ]
 })
-export class HomeModule {}
+export class HomeModule {};
