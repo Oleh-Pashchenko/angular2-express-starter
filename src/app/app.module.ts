@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { HomeService } from './home/home.service';
+
 import { AppComponent } from './app.component';
 import { routing } from './app.router';
 
@@ -17,9 +19,10 @@ import { routing } from './app.router';
     routing
   ],
   providers: [
+    HomeService
   ],
   bootstrap: [
     AppComponent
   ]
 })
-export class AppModule {};
+export class AppModule { };

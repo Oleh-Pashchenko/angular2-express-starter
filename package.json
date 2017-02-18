@@ -5,14 +5,11 @@
   "main": "index.js",
   "angular-cli": {},
   "scripts": {
-    "start": "mv ./node_modules/@types/mongodb/index.d.ts ./node_modules/@types/mongodb/temp.d.ts && ng serve --aot=true --proxy-config proxy.conf.json && npm run _server:run",
-    "lint": "tslint \"src/**/*.ts\"",
-    "build": "mv ./node_modules/@types/mongodb/index.d.ts ./node_modules/@types/mongodb/temp.d.ts && ng build --prod --sm=false --aot=true --output-path=dist/client && mv ./node_modules/@types/mongodb/temp.d.ts ./node_modules/@types/mongodb/index.d.ts",
-    "_server:run": "mv ./node_modules/@types/mongodb/temp.d.ts ./node_modules/@types/mongodb/index.d.ts && nodemon dist/server/bin/www.js",
-    "_server:build": "tsc -p ./server",
-    "postinstall": "npm run build",
-    "rename:temp": "mv ./node_modules/@types/mongodb/index.d.ts ./node_modules/@types/mongodb/temp.d.ts",
-    "rename:index": "mv ./node_modules/@types/mongodb/temp.d.ts ./node_modules/@types/mongodb/index.d.ts"
+    "start": "concurrently --kill-others \"ng serve --aot=true --proxy-config proxy.conf.json\" \"npm run server:run\"",
+    "build": "ng build --prod --sm=false --aot=true --output-path=dist/client && npm run server:build",
+    "server:run": "tsc -p ./server && concurrently \"tsc -w -p ./server\" \"nodemon dist/server/bin/www.js\" ",
+    "server:build": "tsc -p ./server",
+    "postinstall": "npm run build"
   },
   "author": "",
   "license": "ISC",

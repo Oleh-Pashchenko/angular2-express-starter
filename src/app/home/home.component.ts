@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
+import { HomeService } from './home.service';
 
 @Component({
-    moduleId: module.id,
     selector: 'app-home',
     styleUrls: ['./home.component.css'],
     templateUrl: 'home.component.html'
 })
 export class HomeComponent {
-    constructor() {
+    private message: string;
+    constructor(homeService: HomeService) {
+        homeService
+            .testMethod()
+            .subscribe(result => this.message = result.json().message);
     }
 };
