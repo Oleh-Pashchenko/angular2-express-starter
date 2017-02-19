@@ -5,7 +5,9 @@ import * as compression from 'compression';
 import { DatabaseModule } from './mongo';
 import { mainRouter } from './routes/main';
 
-DatabaseModule.MongoDB.Init('');
+// Add connection strion to your DB
+// DatabaseModule.MongoDB.Init('');
+
 const app: express.Application = express();
 app.disable('x-powered-by');
 
