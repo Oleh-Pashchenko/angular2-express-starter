@@ -8,7 +8,7 @@ const expect = chai.expect;
 chai.use(chaiHttp);
 
 describe('Main API', function (): void {
-    it('should returnt \'Hello World\'', (done: Function): void => {
+    it('should return \'Hello World\'', (done: Function): void => {
         chai.request(app)
             .get('/api/')
             .set('content-type', 'application/json')
