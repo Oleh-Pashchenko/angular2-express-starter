@@ -1,7 +1,7 @@
 {
   "name": "angular2-express-starter",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Angular 2 Full Stack project using TypeScript Angular 2, Express, Mongoose and Node",
   "main": "index.js",
   "angular-cli": {},
   "scripts": {
@@ -9,10 +9,10 @@
     "build": "ng build --prod --sm=false --aot=true --output-path=dist/client && npm run server:build",
     "server:run": "tsc -p ./server && concurrently \"tsc -w -p ./server\" \"nodemon dist/server/bin/www.js\" ",
     "server:build": "tsc -p ./server",
-    "test": "tsc -p ./server && mocha ./dist/server/tests/routes/main",
+    "server:test": "tsc -p ./server && mocha ./dist/server/tests/routes/main",
     "postinstall": "npm run build"
   },
-  "author": "",
+  "author": "Oleh Pashchenko",
   "license": "ISC",
   "dependencies": {
     "@angular/common": "^2.4.7",
