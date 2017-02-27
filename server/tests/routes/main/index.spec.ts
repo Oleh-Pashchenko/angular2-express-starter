@@ -1,5 +1,5 @@
 process.env.NODE_ENV = 'testing';
-
+import {} from 'jasmine';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 import { app } from '../../../';
