@@ -7,7 +7,7 @@ import { HomeService } from './home.service';
     templateUrl: 'home.component.html'
 })
 export class HomeComponent {
-    private message: string;
+    public message: string;
     constructor(homeService: HomeService) {
         homeService
             .testMethod()
