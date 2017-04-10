@@ -31,10 +31,11 @@
     "mongoose": "^4.8.1",
     "rxjs": "^5.1.0",
     "tslint": "^4.4.2",
-    "zone.js": "^0.7.6"
+    "zone.js": "^0.7.6",
+    "typescript": "^2.2.2"
   },
   "devDependencies": {
-    "@angular/cli": "^1.0.0-rc.0",
+    "@angular/cli": "^1.0.0",
     "@angular/compiler-cli": "^2.4.8",
     "@types/body-parser": "0.0.33",
     "@types/chai": "^3.4.35",
@@ -49,7 +50,7 @@
     "chai-http": "^3.0.0",
     "codelyzer": "^2.0.0",
     "concurrently": "^3.2.0",
-    "jasmine-core": "^2.5.2",
+    "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "^3.2.0",
     "karma": "^1.5.0",
     "karma-chrome-launcher": "^2.0.0",
